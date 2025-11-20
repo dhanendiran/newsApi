@@ -1,0 +1,48 @@
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+
+@media (max-width: 576px) {
+  .card {
+    margin: 0.5rem auto !important;
+    max-width: 90% !important;
+  }
+  
+  .card-title {
+    font-size: 0.9rem !important;
+  }
+  c27375f9c2cf426fac7b1c8c5fef9a7a
+  .card-text {
+    font-size: 0.8rem !important;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .card {
+    margin: 1rem !important;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    padding: 1rem 0;
+  }
+  
+  .nav-item {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+}
+
+
+.navbar-collapse {
+  transition: all 0.3s ease;
+}
