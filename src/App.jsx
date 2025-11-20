@@ -22,7 +22,7 @@ const [category,setCategory]=useState("general")
     
     
    
-            const url= `https://newsapi.org/v2/everything?q=${category}&apiKey=c27375f9c2cf426fac7b1c8c5fef9a7a`
+            const url= `https://newsapi.org/v2/everything?q=${category}&apiKey=Your Api Key`
              fetch(url).then(res=>res.json()).then(data=>setArticles(data.articles))
     },[category,input])
   
