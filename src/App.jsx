@@ -20,10 +20,15 @@ const [category,setCategory]=useState("general")
   }
      useEffect(()=>{
     
-    
+          const API_KEY=import.meta.env.VITE_NEWS_API_KEY;
+
+          if(!API_KEY){
+            console.error("Missing VITE_NEWS_API_KEY in .env file")
+          }
    
-            const url= `https://newsapi.org/v2/everything?q=${category}&apiKey=Your Api Key`
-             fetch(url).then(res=>res.json()).then(data=>setArticles(data.articles))
+            const url= `https://newsapi.org/v2/everything?q=${category}&apiKey=${API_KEY}`
+             fetch(url).then(res=>res.json()).then(data=>{setArticles(data.articles)})
+             .catch(err=>console.log("Fetch Error:",err))
     },[category,input])
   
     
@@ -36,11 +41,10 @@ const [category,setCategory]=useState("general")
      <Content articles={articles} />
   
 
-
-   
    </div>
  
   )
 }
 
 export default App
+
